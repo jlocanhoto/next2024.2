@@ -1,0 +1,81 @@
+{
+  "cSpell.words": [
+    "armazenamento",
+    "autorestart",
+    "ballt",
+    "Bodymakers",
+    "bson",
+    "configurator",
+    "consts",
+    "dataframe",
+    "dockerode",
+    "fastapi",
+    "fastify",
+    "fmea",
+    "healthcheck",
+    "iiot",
+    "iloc",
+    "isna",
+    "iterrows",
+    "kpis",
+    "languagedetector",
+    "lato",
+    "Millis",
+    "MQTT",
+    "mtbf",
+    "opcua",
+    "opentelemetry",
+    "plcs",
+    "pydantic",
+    "pydatetime",
+    "pymongo",
+    "RABBITMQ",
+    "styleable",
+    "Tamagui",
+    "timeseries",
+    "tomlkit",
+    "venv"
+  ],
+  "yaml.customTags": [
+    "!reset",
+    "!reset sequence",
+    "!override",
+    "!override sequence"
+  ],
+  "editor.insertSpaces": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  }
+}
