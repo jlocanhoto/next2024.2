@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>NExT 2024.2</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  </head>
+  <body>
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <img
+        src="https://www.cesar.school/wp-content/themes/alfama/assets/img/marca.svg"
+      />
+      <h1>Desenvolvimento Web</h1>
+      <h2 style="color: blue">Módulo 07</h2>
+      <button onclick="callApi()" class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">Get Data</button>
+      <div style="overflow-wrap: break-word; white-space: pre-wrap;" id="content"></div>
+    </div>
+    <script>
+      async function callApi() {
+        const resultDiv = document.getElementById('content');
+        const response = await fetch('http://localhost:8000/');
+        const data = await response.json();
+        resultDiv.innerHTML = response.ok ? JSON.stringify(data, null, 2) : data.detail;
+      }
+    </script>
+  </body>
+</html>
