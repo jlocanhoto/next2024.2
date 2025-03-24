@@ -1,0 +1,67 @@
+services:
+  backend:
+    container_name: next_backend
+    image: next/backend:2024.2
+    restart: always
+    pull_policy: never
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+    environment:
+      - DB_URL=postgresql+psycopg2://postgres:next@next_postgres:5432/next2025
+    networks:
+      - next-net
+
+  # Development version
+  #
+  # frontend:
+  #   container_name: next_frontend
+  #   image: next/frontend:2024.2
+  #   restart: always
+  #   pull_policy: never
+  #   build:
+  #     context: ./client
+  #     dockerfile: ./Dockerfile
+  #     target: dev
+  #   ports:
+  #     - 8001:80
+  #   environment:
+  #     - VITE_API_URL=http://localhost:8000/api/v1
+  #   networks:
+  #     - next-net
+
+  frontend:
+    container_name: next_frontend
+    image: next/frontend:2024.2
+    restart: always
+    pull_policy: never
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+      target: prod
+      args:
+        - BACKEND_API_PUBLIC_URL=http://localhost:8000/api/v1
+    ports:
+      - 8001:80
+    networks:
+      - next-net
+
+  database:
+    container_name: next_postgres
+    restart: always
+    image: postgres:17.2
+    ports:
+      - 5432:5432
+    volumes:
+      - /tmp/next/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=next
+    networks:
+      - next-net
+
+networks:
+  next-net:
+    name: next2024.2
+    driver: bridge

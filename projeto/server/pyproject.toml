@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["João Lucas Oliveira Canhoto (CESAR) <jloc@cesar.org.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["standard"], version = "^0.115.6"}
+sqlalchemy = "^2.0.37"
+psycopg2 = "^2.9.10"
+sqlalchemy-utils = "^0.41.2"
+alembic = "^1.14.1"
+pwdlib = {extras = ["argon2"], version = "^0.2.1"}
+pyjwt = "^2.10.1"
+pymysql = {extras = ["rsa"], version = "^1.1.1"}
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.2"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ['migrations']
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
